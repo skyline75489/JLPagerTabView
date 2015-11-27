@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "JLPagerTabViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    JLPagerTabViewController *pagerVC = [[JLPagerTabViewController alloc] init];
+    UIViewController *vc1 = [[UIViewController alloc] init];
+    vc1.view.backgroundColor = [UIColor redColor];
+    
+    UIViewController *vc2 = [[UIViewController alloc] init];
+    vc2.view.backgroundColor = [UIColor grayColor];
+    
+    UIViewController *vc3 = [[UIViewController alloc] init];
+    vc3.view.backgroundColor = [UIColor blueColor];
+    
+    UIViewController *vc4 = [[UIViewController alloc] init];
+    vc4.view.backgroundColor = [UIColor yellowColor];
+    
+    [pagerVC setViewControllers:@[vc1, vc2, vc3, vc4]];
+    [pagerVC setSelectedIndex:1];
+    self.window.rootViewController = pagerVC;
+    [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }

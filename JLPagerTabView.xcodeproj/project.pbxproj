@@ -10,9 +10,11 @@
 		74BE39921C089D690099A4FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BE39911C089D690099A4FC /* main.m */; };
 		74BE39951C089D690099A4FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BE39941C089D690099A4FC /* AppDelegate.m */; };
 		74BE39981C089D690099A4FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BE39971C089D690099A4FC /* ViewController.m */; };
-		74BE399B1C089D690099A4FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BE39991C089D690099A4FC /* Main.storyboard */; };
 		74BE399D1C089D690099A4FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74BE399C1C089D690099A4FC /* Assets.xcassets */; };
 		74BE39A01C089D690099A4FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BE399E1C089D690099A4FC /* LaunchScreen.storyboard */; };
+		74BE39AB1C089EF60099A4FC /* JLPagerTabLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BE39AA1C089EF60099A4FC /* JLPagerTabLabelView.m */; };
+		74BE39AE1C089F340099A4FC /* JLPagerTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BE39AD1C089F340099A4FC /* JLPagerTabBarView.m */; };
+		74BE39B21C08A0BD0099A4FC /* JLPagerTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BE39B11C08A0BC0099A4FC /* JLPagerTabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +24,15 @@
 		74BE39941C089D690099A4FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		74BE39961C089D690099A4FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		74BE39971C089D690099A4FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		74BE399A1C089D690099A4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74BE399C1C089D690099A4FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74BE399F1C089D690099A4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74BE39A11C089D690099A4FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BE39A91C089EF60099A4FC /* JLPagerTabLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLPagerTabLabelView.h; path = Classes/View/JLPagerTabLabelView.h; sourceTree = "<group>"; };
+		74BE39AA1C089EF60099A4FC /* JLPagerTabLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLPagerTabLabelView.m; path = Classes/View/JLPagerTabLabelView.m; sourceTree = "<group>"; };
+		74BE39AC1C089F340099A4FC /* JLPagerTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPagerTabBarView.h; sourceTree = "<group>"; };
+		74BE39AD1C089F340099A4FC /* JLPagerTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLPagerTabBarView.m; sourceTree = "<group>"; };
+		74BE39B01C08A0BC0099A4FC /* JLPagerTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLPagerTabViewController.h; path = Classes/Controller/JLPagerTabViewController.h; sourceTree = "<group>"; };
+		74BE39B11C08A0BC0099A4FC /* JLPagerTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLPagerTabViewController.m; path = Classes/Controller/JLPagerTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +65,11 @@
 		74BE398F1C089D690099A4FC /* JLPagerTabView */ = {
 			isa = PBXGroup;
 			children = (
+				74BE39A81C089E720099A4FC /* Classes */,
 				74BE39931C089D690099A4FC /* AppDelegate.h */,
 				74BE39941C089D690099A4FC /* AppDelegate.m */,
 				74BE39961C089D690099A4FC /* ViewController.h */,
 				74BE39971C089D690099A4FC /* ViewController.m */,
-				74BE39991C089D690099A4FC /* Main.storyboard */,
 				74BE399C1C089D690099A4FC /* Assets.xcassets */,
 				74BE399E1C089D690099A4FC /* LaunchScreen.storyboard */,
 				74BE39A11C089D690099A4FC /* Info.plist */,
@@ -77,6 +84,35 @@
 				74BE39911C089D690099A4FC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		74BE39A71C089DD10099A4FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74BE39A91C089EF60099A4FC /* JLPagerTabLabelView.h */,
+				74BE39AA1C089EF60099A4FC /* JLPagerTabLabelView.m */,
+				74BE39AC1C089F340099A4FC /* JLPagerTabBarView.h */,
+				74BE39AD1C089F340099A4FC /* JLPagerTabBarView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		74BE39A81C089E720099A4FC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				74BE39AF1C08A0900099A4FC /* Controller */,
+				74BE39A71C089DD10099A4FC /* View */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		74BE39AF1C08A0900099A4FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74BE39B01C08A0BC0099A4FC /* JLPagerTabViewController.h */,
+				74BE39B11C08A0BC0099A4FC /* JLPagerTabViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +146,7 @@
 				TargetAttributes = {
 					74BE398C1C089D690099A4FC = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = E4UPC35Z5N;
 					};
 				};
 			};
@@ -138,7 +175,6 @@
 			files = (
 				74BE39A01C089D690099A4FC /* LaunchScreen.storyboard in Resources */,
 				74BE399D1C089D690099A4FC /* Assets.xcassets in Resources */,
-				74BE399B1C089D690099A4FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,20 +188,15 @@
 				74BE39981C089D690099A4FC /* ViewController.m in Sources */,
 				74BE39951C089D690099A4FC /* AppDelegate.m in Sources */,
 				74BE39921C089D690099A4FC /* main.m in Sources */,
+				74BE39AB1C089EF60099A4FC /* JLPagerTabLabelView.m in Sources */,
+				74BE39B21C08A0BD0099A4FC /* JLPagerTabViewController.m in Sources */,
+				74BE39AE1C089F340099A4FC /* JLPagerTabBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		74BE39991C089D690099A4FC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				74BE399A1C089D690099A4FC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		74BE399E1C089D690099A4FC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -261,7 +292,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = JLPagerTabView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.byskyline.JLPagerTabView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,7 +305,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = JLPagerTabView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.byskyline.JLPagerTabView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
