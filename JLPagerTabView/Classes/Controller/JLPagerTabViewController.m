@@ -39,7 +39,9 @@
     
     self.isDragging = NO;
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
 }
 
 - (JLPagerTabBarView *)tabBarView {

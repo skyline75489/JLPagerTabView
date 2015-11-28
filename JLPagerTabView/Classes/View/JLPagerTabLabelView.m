@@ -17,7 +17,7 @@
         _label.text = text;
         _label.font = [UIFont systemFontOfSize:15];
         _label.textAlignment = NSTextAlignmentCenter;
-        _label.textColor = self.tintColor;
+        _label.textColor = self.jl_tintColor;
         [self addSubview:_label];
     }
     return self;

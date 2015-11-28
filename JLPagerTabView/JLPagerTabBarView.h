@@ -13,6 +13,7 @@
 @interface JLPagerTabBarView : UIView
 
 @property (nonatomic) id<JLPagerTabBarDelegate> delegate;
+@property (nonatomic) UIColor *jl_tintColor;
 
 - (void)moveIndicatorToOffset:(CGFloat)offset;
 - (void)moveIndicatorToIndex:(NSUInteger)index;
