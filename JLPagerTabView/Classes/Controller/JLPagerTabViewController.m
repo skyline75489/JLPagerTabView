@@ -9,7 +9,6 @@
 #import "JLPagerTabViewController.h"
 #import "JLPagerTabBarView.h"
 
-#define TABBAR_HEIGHT (70)
 
 @interface JLPagerTabViewController ()
 
@@ -23,6 +22,15 @@
 
 @implementation JLPagerTabViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.barHeight = 40;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,11 +38,13 @@
     [self.view addSubview:self.contentScrollView];
     
     self.isDragging = NO;
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (JLPagerTabBarView *)tabBarView {
     if (!_tabBarView) {
-        _tabBarView = [[JLPagerTabBarView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, TABBAR_HEIGHT)];
+        _tabBarView = [[JLPagerTabBarView alloc] initWithFrame:CGRectMake(0, 0,CGRectGetWidth(self.view.frame), self.barHeight)];
         _tabBarView.backgroundColor = [UIColor whiteColor];
         _tabBarView.delegate = self;
     }
@@ -43,7 +53,7 @@
 
 - (UIScrollView *)contentScrollView {
     if (!_contentScrollView) {
-        _contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, TABBAR_HEIGHT, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - TABBAR_HEIGHT)];
+        _contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.barHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - self.barHeight)];
         _contentScrollView.delegate = self;
         _contentScrollView.pagingEnabled = YES;
         _contentScrollView.userInteractionEnabled = YES;
@@ -57,11 +67,11 @@
     _backingViewControllers = viewControllers;
     [_backingViewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *_) {
         [self addChildViewController:viewController];
-        viewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame) * idx, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - TABBAR_HEIGHT);
+        viewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame) * idx, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - self.barHeight);
         [self.contentScrollView addSubview:viewController.view];
     }];
     
-    self.contentScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * _backingViewControllers.count, CGRectGetHeight(self.view.frame) - TABBAR_HEIGHT);
+    self.contentScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * _backingViewControllers.count, CGRectGetHeight(self.view.frame) - self.barHeight);
     
 }
 

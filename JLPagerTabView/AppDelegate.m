@@ -32,7 +32,9 @@
     
     [pagerVC setViewControllers:@[vc1, vc2, vc3, vc4]];
     [pagerVC setSelectedIndex:1];
-    self.window.rootViewController = pagerVC;
+    pagerVC.navigationItem.title = @"Pager Demo";
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:pagerVC];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;

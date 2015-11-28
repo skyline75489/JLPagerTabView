@@ -31,7 +31,7 @@
         _currentLabelOffset = 0;
         _labelWidth = frame.size.width / 4;
         _normalColor = [UIColor blackColor];
-        _highlightColor = [UIColor redColor];
+        _highlightColor = self.tintColor;
         
         [self addLabel:@"Tab1"];
         [self addLabel:@"Tab2"];

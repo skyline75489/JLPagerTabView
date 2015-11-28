@@ -11,6 +11,8 @@
 
 @interface JLPagerTabViewController : UIViewController<JLPagerTabBarDelegate, UIScrollViewDelegate>
 
+@property (nonatomic) CGFloat barHeight;
+
 - (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers;
 - (void)setSelectedIndex:(NSUInteger)selectedIndex;
 
