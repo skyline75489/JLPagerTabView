@@ -11,7 +11,6 @@
 @interface JLPagerTabLabelView : UIControl
 
 @property (nonatomic) UILabel *label;
-@property (nonatomic) UIColor *jl_tintColor;
 
 - (instancetype) initWithFrame:(CGRect)frame Text:(NSString *)text;
 

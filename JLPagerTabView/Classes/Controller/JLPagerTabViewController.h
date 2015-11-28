@@ -13,6 +13,7 @@
 
 @property (nonatomic) CGFloat barHeight;
 
+- (instancetype)initWithTabTitles:(NSArray *)titles;
 - (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers;
 - (void)setSelectedIndex:(NSUInteger)selectedIndex;
 

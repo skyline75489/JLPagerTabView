@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    JLPagerTabViewController *pagerVC = [[JLPagerTabViewController alloc] init];
+    JLPagerTabViewController *pagerVC = [[JLPagerTabViewController alloc] initWithTabTitles:@[@"1", @"2", @"3", @"4"]];
     UIViewController *vc1 = [[UIViewController alloc] init];
     vc1.view.backgroundColor = [UIColor greenColor];
     

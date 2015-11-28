@@ -14,6 +14,10 @@
 
 @property (nonatomic) id<JLPagerTabBarDelegate> delegate;
 @property (nonatomic) UIColor *jl_tintColor;
+@property (nonatomic) CGFloat tabCounts;
+@property (nonatomic) CGFloat labelWidth;
+
+- (instancetype) initWithFrame:(CGRect)frame barTitles:(NSArray *)titles;
 
 - (void)moveIndicatorToOffset:(CGFloat)offset;
 - (void)moveIndicatorToIndex:(NSUInteger)index;

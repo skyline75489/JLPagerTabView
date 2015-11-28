@@ -14,10 +14,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        _label.backgroundColor = [UIColor whiteColor];
         _label.text = text;
         _label.font = [UIFont systemFontOfSize:15];
         _label.textAlignment = NSTextAlignmentCenter;
-        _label.textColor = self.jl_tintColor;
         [self addSubview:_label];
     }
     return self;

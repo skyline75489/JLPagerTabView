@@ -15,6 +15,7 @@
 @property (nonatomic) JLPagerTabBarView *tabBarView;
 @property (nonatomic) UIScrollView *contentScrollView;
 @property (nonatomic) NSArray<UIViewController *> *backingViewControllers;
+@property (nonatomic) NSArray *barTitles;
 @property (nonatomic) NSInteger backingSelectedIndex;
 
 @property (nonatomic) BOOL isDragging;
@@ -22,11 +23,12 @@
 
 @implementation JLPagerTabViewController
 
-- (instancetype)init
+- (instancetype)initWithTabTitles:(NSArray *)titles
 {
     self = [super init];
     if (self) {
         self.barHeight = 40;
+        self.barTitles = titles;
     }
     return self;
 }
@@ -46,8 +48,7 @@
 
 - (JLPagerTabBarView *)tabBarView {
     if (!_tabBarView) {
-        _tabBarView = [[JLPagerTabBarView alloc] initWithFrame:CGRectMake(0, 0,CGRectGetWidth(self.view.frame), self.barHeight)];
-        _tabBarView.backgroundColor = [UIColor whiteColor];
+        _tabBarView = [[JLPagerTabBarView alloc] initWithFrame:CGRectMake(0, 0,CGRectGetWidth(self.view.frame), self.barHeight) barTitles:self.barTitles];
         _tabBarView.delegate = self;
     }
     return _tabBarView;
@@ -71,6 +72,7 @@
         [self addChildViewController:viewController];
         viewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame) * idx, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - self.barHeight);
         [self.contentScrollView addSubview:viewController.view];
+
     }];
     
     self.contentScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * _backingViewControllers.count, CGRectGetHeight(self.view.frame) - self.barHeight);

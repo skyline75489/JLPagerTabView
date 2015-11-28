@@ -13,42 +13,54 @@
 
 @property (nonatomic) NSMutableArray<JLPagerTabLabelView *> *labels;
 @property (nonatomic) CGFloat currentLabelOffset;
-@property (nonatomic) CGFloat labelWidth;
 @property (nonatomic) NSUInteger selectedIndex;
 @property (nonatomic) UIColor *normalColor;
 @property (nonatomic) UIColor *highlightColor;
 @property (nonatomic) UIView *floatIndicatorView;
-
+@property (nonatomic) NSArray *barTitles;
 
 @end
 
 @implementation JLPagerTabBarView
 
-- (instancetype) initWithFrame:(CGRect)frame {
+- (instancetype) initWithFrame:(CGRect)frame barTitles:(NSArray *)titles{
     self = [super initWithFrame:frame];
     if (self) {
         _labels = [[NSMutableArray alloc] init];
         _currentLabelOffset = 0;
-        _labelWidth = frame.size.width / 4;
+        _tabCounts = 0;
+        _labelWidth = 0;
         _normalColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.jl_tintColor = [UIColor redColor];
         if ([self respondsToSelector:@selector(tintColor)]) {
             self.jl_tintColor = self.tintColor;
         }
         _highlightColor = self.jl_tintColor;
         
-        [self addLabel:@"Tab1"];
-        [self addLabel:@"Tab2"];
-        [self addLabel:@"Tab3"];
-        [self addLabel:@"Tab4"];
+        self.tabCounts = titles.count;
+        self.barTitles = titles;
+        [self.barTitles enumerateObjectsUsingBlock:^(NSString *title, NSUInteger idx, BOOL *_) {
+            [self addLabel:title];
+        }];
         
-        _floatIndicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 1, self.labelWidth, 1)];
-        _floatIndicatorView.backgroundColor = _highlightColor;
-        
-        [self addSubview:_floatIndicatorView];
+        [self addSubview:self.floatIndicatorView];
         
     }
     return self;
+}
+
+- (UIView *)floatIndicatorView {
+    if (!_floatIndicatorView) {
+        _floatIndicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 1, self.labelWidth, 1)];
+        _floatIndicatorView.backgroundColor = _highlightColor;
+    }
+    return _floatIndicatorView;
+}
+
+- (void)setTabCounts:(CGFloat)tabCounts {
+    _tabCounts = tabCounts;
+    _labelWidth = CGRectGetWidth(self.frame) / _tabCounts;
 }
 
 - (void)addLabel:(NSString *)text {
