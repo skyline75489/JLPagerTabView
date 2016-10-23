@@ -19,6 +19,7 @@
 @property (nonatomic) NSInteger backingSelectedIndex;
 
 @property (nonatomic) BOOL isDragging;
+
 @end
 
 @implementation JLPagerTabViewController
